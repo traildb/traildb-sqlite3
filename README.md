@@ -38,3 +38,17 @@ To load a TrailDB as a virtual table, invoke `CREATE VIRTUAL TABLE`:
     sqlite> CREATE VIRTUAL TABLE mytraildb USING traildb ('./path/to/traildb');
     sqlite> SELECT * FROM mytraildb;
 ```
+
+License
+-------
+
+This extension is MIT licensed.
+
+How to contribute
+-----------------
+
+Open issues and pull requests on the [project GitHub page](https://github.com/traildb/traildb-sqlite3).
+
+Contributing to this repository will require a signature on a Community License
+Agreement; we have set up a CLA assistant to make that easy. It will pop up
+when you open a pull request.
