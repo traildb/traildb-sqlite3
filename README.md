@@ -1,0 +1,40 @@
+TrailDB for SQLite
+------------------
+
+This repository contains an implementation of an extension that exposes
+TrailDBs as virtual tables in SQLite.
+
+Compile
+-------
+
+There is a `Makefile` in this repository that works on UNIXy systems. Install
+SQLite and [TrailDB](https://traildb.io/) first.
+
+```
+    $ make
+```
+
+If compilation is successful, you will have a file `sqlite3traildb.so` in the
+current directory that implements the extension.
+
+The `Makefile` for this project is very simple, since this is a single C-file project. If something fails, the command to compile this extension is not much more than:
+
+```
+    $ gcc -o sqlite3traildb.so sqlite3_traildb.c -O2 -shared -fPIC -ltraildb -lsqlite3
+```
+
+Load
+----
+
+In SQLite, use `.load` or `LOAD_EXTENSION()` function to load up the extension.
+
+```sql
+    sqlite> .load ./sqlite3traildb
+```
+
+To load a TrailDB as a virtual table, invoke `CREATE VIRTUAL TABLE`:
+
+```sql
+    sqlite> CREATE VIRTUAL TABLE mytraildb USING traildb ('./path/to/traildb');
+    sqlite> SELECT * FROM mytraildb;
+```
