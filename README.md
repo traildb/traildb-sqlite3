@@ -39,6 +39,16 @@ To load a TrailDB as a virtual table, invoke `CREATE VIRTUAL TABLE`:
     sqlite> SELECT * FROM mytraildb;
 ```
 
+Performance
+-----------
+
+This extension does not implement any indexes or special optimizations when
+querying TrailDBs. This means most queries will scan the entire TrailDB.
+
+TrailDBs are encoded as integers; this extension will only decode them where
+necessary. For example, `SELECT COUNT(1) FROM tdb` will not decode any values
+to strings.
+
 License
 -------
 
