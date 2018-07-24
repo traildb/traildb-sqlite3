@@ -64,6 +64,6 @@ How to contribute
 
 Open issues and pull requests on the [project GitHub page](https://github.com/traildb/traildb-sqlite3).
 
-Contributing to this repository will require a signature on a Community License
+Contributing to this repository will require a signature on a Contributor License
 Agreement; we have set up a CLA assistant to make that easy. It will pop up
 when you open a pull request.
