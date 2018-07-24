@@ -49,6 +49,11 @@ TrailDBs are encoded as integers; this extension will only decode them where
 necessary. For example, `SELECT COUNT(1) FROM tdb` will not decode any values
 to strings.
 
+Unimplemented features
+----------------------
+
+This extension cannot create TrailDBs. It can only read existing TrailDBs.
+
 License
 -------
 
